@@ -1,24 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../style/StudentPro.css";
 export default function StudentProfile(prop) {
-  const { data } = prop;
-  const [chColor, setChColor] = useState("white");
-  console.log(data.status);
-
-  function changeColor() {
+  useEffect(() => {
     if (data.status === "active") {
       setChColor("rgb(9, 229, 9)");
-      return chColor;
     } else if (data.status === "fail") {
       setChColor("red");
-      return chColor;
     } else if (data.status === "loading") {
       setChColor("rgb(243, 153, 19)");
-      return chColor;
     }
-  }
+  }, []);
+  const { data } = prop;
+  const [chColor, setChColor] = useState("white");
+  const [test, setTest] = useState("");
+
+  console.log(data.status);
+
   return (
-    <div className="profile" style={{ backgroundColor: changeColor() }}>
+    <div className="profile" style={{ backgroundColor: chColor }}>
       <img
         src="https://cuad.ask.fm/assets2/064/547/741/696/normal/966259_10200598094587862_251011299_o.jpg"
         alt=""

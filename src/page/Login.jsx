@@ -14,6 +14,7 @@ export default function Login(prop) {
     data.map((user, index) => {
       if (user.name === name && user.password === password) {
         if (user.role) {
+          localStorage.setItem("currentUser", JSON.stringify(user));
           navigate("/student");
           console.log("hi student");
         } else {

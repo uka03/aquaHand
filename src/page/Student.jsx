@@ -3,17 +3,19 @@ import "../style/Student.css";
 
 export default function Student(prop) {
   const { data } = prop;
-  const [chColor, setChColor] = useState("");
+  const [chColor, setChColor] = useState("white");
+  const test = localStorage.getItem("currentUser");
+  const user = JSON.parse(test);
   function changeColor() {
     if (chColor === "active") {
       setChColor("rgb(9, 229, 9)");
-      data[0].status = "active";
+      user.status = "active";
     } else if (chColor === "fail") {
       setChColor("red");
-      data[0].status = "fail";
+      user.status = "fail";
     } else if (chColor === "loading") {
       setChColor("rgb(243, 153, 19)");
-      data[0].status = "loading";
+      user.status = "loading";
     }
     return chColor;
   }
@@ -25,7 +27,7 @@ export default function Student(prop) {
           alt=""
         />
       </div>
-      <div className="name">{data[0].status}</div>
+      <div className="name">{user.name}</div>
       <div className="btns">
         <button
           className="btn"
