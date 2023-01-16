@@ -1,0 +1,65 @@
+.student {
+  max-width: 600px;
+  height: 100%;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.img::after {
+  backdrop-filter: blur(50px);
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0px;
+  left: 67px;
+  bottom: 0;
+}
+.img {
+  padding: 30px;
+  height: 280px;
+  width: 280px;
+  border-radius: 150px;
+}
+
+.img img {
+  filter: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 80px;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  height: 150px;
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#active {
+  background-color: rgb(9, 229, 9);
+}
+
+#fail {
+  background-color: red;
+}
+
+#loading {
+  background-color: rgb(243, 153, 19);
+}
