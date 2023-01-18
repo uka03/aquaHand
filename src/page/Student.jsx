@@ -4,24 +4,29 @@ import "../style/Student.css";
 
 export default function Student(prop) {
   const { data } = prop;
+  const { userServices } = prop;
+  const [userData, setUserData] = useState(data);
   const [chColor, setChColor] = useState("white");
-
+  console.log(userServices.updateUser);
   const userId = useParams();
-  console.log(userId);
+
   console.log(data, "ene bol miii data");
-  const user = data.filter((m) => m._id === userId.id);
-  console.log(user, "uka");
+  const user = userData.filter((m) => m._id === userId.id);
+  console.log(user[0]._id, "uka");
   function changeColor() {
     if (chColor === "active") {
       setChColor("rgb(9, 229, 9)");
-      user.status = "active";
+
+      userServices.updateUser(user[0]._id, "active");
     } else if (chColor === "fail") {
       setChColor("red");
-      user.status = "fail";
+
+      userServices.updateUser(user[0]._id, "fail");
     } else if (chColor === "loading") {
       setChColor("rgb(243, 153, 19)");
-      user.status = "loading";
+      userServices.updateUser(user[0]._id, "loading");
     }
+    console.log(data);
     return chColor;
   }
   return (

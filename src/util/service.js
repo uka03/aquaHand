@@ -1,35 +1,38 @@
 const getAllUsers = async (cred) => {
-    return await fetch("http://34.221.45.97:4000/v1/users", {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json",
-        },
-    })
-}
+  return await fetch("http://34.221.45.97:4000/v1/users", {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+};
 
 const createUser = async (cred) => {
-    return await fetch("http://34.221.45.97:4000/v1/users", {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json",
-        },
-        body: {
-            cred
-        }
-    })
-}
+  return await fetch("http://34.221.45.97:4000/v1/users", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: {
+      cred,
+    },
+  });
+};
 
-const updateUser = async (cred) => {
-    return await fetch("http://34.221.45.97:4000/v1/users", {
-        method: "PUT",
-        headers: {
-            "Content-type": "application/json",
-        },
-    })
-}
+const updateUser = async (id, sta) => {
+  return await fetch(`http://34.221.45.97:4000/v1/users/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({ status: `${sta}` }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data)); // Manipulate the data retrieved back, if we want to do something with it
+};
 
 export const userServices = {
-    getAllUsers,
-    createUser,
-    updateUser
-}
+  getAllUsers,
+  createUser,
+  updateUser,
+};
