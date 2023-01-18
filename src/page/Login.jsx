@@ -15,10 +15,10 @@ export default function Login(prop) {
       if (user.name === name && user.password === password) {
         if (user.role) {
           localStorage.setItem("currentUser", JSON.stringify(user));
-          navigate("/student");
-          console.log("hi student");
+          navigate(`/student/${user._id}`);
+          console.log("hi student", user);
         } else {
-          navigate("/teacher");
+          navigate(`/teacher`);
           console.log("hi teacher");
         }
       }

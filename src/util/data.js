@@ -7,7 +7,7 @@ export const data = [
   },
   {
     name: "uka",
-    status: "none",
+    status: "active",
     password: "uka",
     role: true,
   },

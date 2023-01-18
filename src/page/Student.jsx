@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import "../style/Student.css";
 
 export default function Student(prop) {
   const { data } = prop;
   const [chColor, setChColor] = useState("white");
-  const test = localStorage.getItem("currentUser");
-  const user = JSON.parse(test);
+
+  const userId = useParams();
+  console.log(userId);
+  console.log(data, "ene bol miii data");
+  const user = data.filter((m) => m._id === userId.id);
+  console.log(user, "uka");
   function changeColor() {
     if (chColor === "active") {
       setChColor("rgb(9, 229, 9)");
@@ -27,7 +32,7 @@ export default function Student(prop) {
           alt=""
         />
       </div>
-      <div className="name">{user.name}</div>
+      <div className="name">{user[0].name}</div>
       <div className="btns">
         <button
           className="btn"

@@ -12,7 +12,6 @@ export default function StudentProfile(prop) {
   }, []);
   const { data } = prop;
   const [chColor, setChColor] = useState("white");
-  const [test, setTest] = useState("");
 
   console.log(data.status);
 
