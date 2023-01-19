@@ -18,6 +18,12 @@
 
 .center {
   display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+}
+.centerPro {
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   width: 350px;
@@ -34,4 +40,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.btnReset {
+  background-color: rgb(255, 0, 0);
+  color: black;
+  font-size: 39px;
+  box-sizing: border-box;
+  width: 300px;
+  border-radius: 20px;
+  padding: 10px;
+  height: 80px;
 }
