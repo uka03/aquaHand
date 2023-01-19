@@ -28,7 +28,7 @@ const updateUser = async (id, sta) => {
     body: JSON.stringify({ status: `${sta}` }),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data)); // Manipulate the data retrieved back, if we want to do something with it
+    .then((data) => console.log(data));
 };
 
 export const userServices = {
