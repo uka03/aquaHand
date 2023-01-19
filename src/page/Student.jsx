@@ -7,7 +7,7 @@ export default function Student(prop) {
   const { userServices } = prop;
   const [userData, setUserData] = useState(data);
   const [chColor, setChColor] = useState("white");
-  console.log(userServices.updateUser);
+  // console.log(userServices.updateUser);
   const userId = useParams();
 
   console.log(data, "ene bol miii data");
