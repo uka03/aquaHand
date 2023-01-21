@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import img from "../undraw_engineering_team_a7n2.svg";
+import "../style/Login.css";
 
 export default function Login(prop) {
   const { data } = prop;
@@ -25,44 +25,70 @@ export default function Login(prop) {
     });
   }
   return (
-    <section className="h-screen bg-gray-300">
-      <div className="container px-6 py-12 h-full">
-        <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-          <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 ">
-            <img src={img} className="w-4/5 mx-auto" alt="Phone image" />
+    <div className="loginPage">
+      <div className="login">
+        <h1 className="loginTitle">Welcome back</h1>
+        <form className="form" onSubmit={checker}>
+          <div className="input">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.0914 9.59166C12.9084 8.94888 13.5047 8.06743 13.7975 7.06994C14.0902 6.07246 14.0647 5.00855 13.7246 4.02622C13.3845 3.04388 12.7466 2.19199 11.8998 1.58904C11.053 0.986091 10.0393 0.662079 8.99975 0.662079C7.96021 0.662079 6.94652 0.986091 6.09969 1.58904C5.25287 2.19199 4.61504 3.04388 4.27493 4.02622C3.93482 5.00855 3.90935 6.07246 4.20205 7.06994C4.49476 8.06743 5.09109 8.94888 5.90809 9.59166C4.50815 10.1525 3.28666 11.0828 2.37383 12.2833C1.461 13.4837 0.891056 14.9094 0.724753 16.4083C0.712715 16.5178 0.72235 16.6285 0.753108 16.7342C0.783865 16.8399 0.835143 16.9385 0.904013 17.0244C1.0431 17.1979 1.24541 17.309 1.46642 17.3333C1.68743 17.3576 1.90905 17.2932 2.08252 17.1541C2.256 17.015 2.36711 16.8127 2.39142 16.5917C2.57441 14.9627 3.35116 13.4582 4.57327 12.3657C5.79538 11.2731 7.37717 10.6692 9.01642 10.6692C10.6557 10.6692 12.2375 11.2731 13.4596 12.3657C14.6817 13.4582 15.4584 14.9627 15.6414 16.5917C15.6641 16.7964 15.7618 16.9855 15.9157 17.1225C16.0696 17.2595 16.2687 17.3346 16.4748 17.3333H16.5664C16.7849 17.3082 16.9845 17.1977 17.1219 17.026C17.2593 16.8543 17.3232 16.6353 17.2998 16.4167C17.1327 14.9135 16.5596 13.4841 15.6421 12.2818C14.7246 11.0795 13.4972 10.1496 12.0914 9.59166V9.59166ZM8.99975 8.99999C8.34048 8.99999 7.69602 8.8045 7.14785 8.43822C6.59969 8.07195 6.17245 7.55136 5.92015 6.94227C5.66786 6.33318 5.60185 5.66296 5.73047 5.01636C5.85909 4.36975 6.17656 3.77581 6.64273 3.30964C7.10891 2.84346 7.70285 2.52599 8.34945 2.39737C8.99606 2.26876 9.66628 2.33477 10.2754 2.58706C10.8845 2.83935 11.405 3.26659 11.7713 3.81476C12.1376 4.36292 12.3331 5.00739 12.3331 5.66666C12.3331 6.55071 11.9819 7.39856 11.3568 8.02368C10.7317 8.6488 9.88381 8.99999 8.99975 8.99999Z"
+                fill="#BBB5FF"
+              />
+            </svg>
+            <input type="text" name="name" placeholder="Нэвтрэх нэр" />
           </div>
-          <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-            <form onSubmit={checker}>
-              <div className="mb-2">
-                <label htmlFor="name">Enter your name</label>
-                <input
-                  name="name"
-                  type="text"
-                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="password" className=" py-5">
-                  Enter your password
-                </label>
-                <input
-                  name="password"
-                  type="password"
-                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Password"
-                />
-              </div>
-              <button
-                type="submit"
-                className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 w-full"
-              >
-                Sign in
-              </button>
-            </form>
+
+          <div className="input">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.8333 9.16666H4.16667C3.24619 9.16666 2.5 9.91285 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91285 16.7538 9.16666 15.8333 9.16666Z"
+                stroke="#BBB5FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.83301 9.16667V5.83334C5.83197 4.80005 6.21491 3.80323 6.90749 3.03639C7.60006 2.26956 8.55287 1.78742 9.58093 1.68358C10.609 1.57974 11.639 1.86159 12.4709 2.47443C13.3028 3.08728 13.8774 3.98738 14.083 5.00001"
+                stroke="#BBB5FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <input type="password" name="password" placeholder="Нууц үг" />
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2.5C15.5228 2.5 18.3333 5.83333 20 10L19.8136 10.4511C18.1253 14.4047 15.322 17.5 10 17.5C4.47715 17.5 1.66667 14.1667 0 10C1.66667 5.83333 4.47715 2.5 10 2.5ZM10 4.16667C6.07857 4.16667 3.60889 6.0389 1.89531 9.80342L1.8075 10L1.89531 10.1966C3.56904 13.8735 5.96411 15.7452 9.72876 15.8303L10 15.8333C13.9214 15.8333 16.3911 13.9611 18.1047 10.1966L18.1917 10L18.1047 9.80342C16.431 6.12645 14.0359 4.25477 10.2712 4.1697L10 4.16667ZM10 5.83333C12.3012 5.83333 14.1667 7.69881 14.1667 10C14.1667 12.3012 12.3012 14.1667 10 14.1667C7.69881 14.1667 5.83333 12.3012 5.83333 10C5.83333 7.69881 7.69881 5.83333 10 5.83333ZM10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5Z"
+                fill="#BBB5FF"
+              />
+            </svg>
           </div>
-        </div>
+          <button className="loginBtn" type="submit">
+            {" "}
+            Нэвтрэх
+          </button>
+        </form>
+        <p className="pa">aqua team</p>
       </div>
-    </section>
+    </div>
   );
 }

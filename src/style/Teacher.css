@@ -1,53 +1,49 @@
-.students {
-  max-width: 1000px;
-  justify-content: center;
+.studentMain {
+  display: flex;
+  width: 1000px;
+  justify-content: space-around;
+  align-items: flex-start;
   margin: 50px auto;
 }
-.top {
+.side {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .center {
   display: flex;
   flex-direction: column;
   gap: 100px;
+  width: 100%;
   align-items: center;
+  justify-content: center;
 }
-.centerPro {
+.top {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 350px;
-  height: 250px;
-  gap: 20px;
+  justify-content: center;
+  gap: 50px;
+}
+
+.centerTop {
+  width: 400px;
+  gap: 50px;
+  display: flex;
   justify-content: end;
+  flex-wrap: wrap;
 }
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 .btnReset {
-  background-color: rgb(255, 0, 0);
-  color: black;
-  font-size: 39px;
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50px;
   box-sizing: border-box;
-  width: 300px;
-  border-radius: 20px;
-  padding: 10px;
-  height: 80px;
+  border: none;
+  box-shadow: 0 3px 1px #7b00b8;
+  color: black;
+}
+
+.btnReset:active {
+  box-shadow: inset 0 3px 1px #7b00b8;
 }
