@@ -9,17 +9,14 @@ export default function Login(prop) {
     e.preventDefault();
     let name = e.target.name.value;
     let password = e.target.password.value;
-    console.log("name", name);
-    console.log("pass", password);
+
     data.map((user, index) => {
       if (user.name === name && user.password === password) {
         if (user.role) {
           localStorage.setItem("currentUser", JSON.stringify(user));
           navigate(`/student/${user._id}`);
-          console.log("hi student", user);
         } else {
-          navigate(`/teacher`);
-          console.log("hi teacher");
+          navigate(`/teacher/${user._id}`);
         }
       }
     });

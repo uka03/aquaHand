@@ -11,9 +11,9 @@ export default function Student(prop) {
   const [chColor, setChColor] = useState("white");
   // console.log(userServices.updateUser);
   const userId = useParams();
-  console.log(data, "ene bol miii data");
+
   const user = data.filter((m) => m._id === userId.id);
-  console.log(user[0]._id, "uka");
+
   function changeColor(status) {
     if (status === "active") {
       setChColor("green");
@@ -25,7 +25,7 @@ export default function Student(prop) {
       setChColor("yellow");
       userServices.updateUser(user[0]._id, "loading");
     }
-    console.log(data);
+
     return chColor;
   }
   return (
