@@ -16,7 +16,7 @@ export default function Teacher() {
       .then((res) => res.json())
       .then((lol) => setData(lol.data));
   }, []);
-  console.log(data);
+
   function hover(name, hover, color) {
     setIsHovering(hover);
     setName(name);
@@ -26,7 +26,6 @@ export default function Teacher() {
   function jd() {
     data.map((user) => {
       userServices.updateUser(user._id, "none");
-      console.log(user);
     });
   }
   return (
